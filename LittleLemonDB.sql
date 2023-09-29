@@ -19,8 +19,7 @@ USE `LittleLemon` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `LittleLemon`.`Customers` (
   `CustomerID` INT NOT NULL AUTO_INCREMENT,
-  `FirstName` VARCHAR(100) NOT NULL,
-  `LastName` VARCHAR(100) NOT NULL,
+  `FullName` VARCHAR(100) NOT NULL,
   `PhoneNr` INT NOT NULL,
   `Email` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`CustomerID`))
@@ -68,15 +67,33 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `LittleLemon`.`Menuitems`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `LittleLemon`.`Menuitems` (
+  `MenuitemID` INT NOT NULL AUTO_INCREMENT,
+  `Starter` VARCHAR(50) NOT NULL,
+  `Course` VARCHAR(50) NOT NULL,
+  `Desert` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`MenuitemID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `LittleLemon`.`Menu`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `LittleLemon`.`Menu` (
   `MenuID` INT NOT NULL AUTO_INCREMENT,
-  `Name` VARCHAR(100) NOT NULL,
-  `Type` VARCHAR(100) NOT NULL,
+  `MenuName` VARCHAR(100) NOT NULL,
   `Cuisine` VARCHAR(100) NOT NULL,
+  `MenuitemID` INT NOT NULL,
   `Price` DECIMAL(10,2) NOT NULL,
-  PRIMARY KEY (`MenuID`))
+  PRIMARY KEY (`MenuID`),
+  INDEX `MenuitemID_fk_idx` (`MenuitemID` ASC) VISIBLE,
+  CONSTRAINT `MenuitemID_fk`
+    FOREIGN KEY (`MenuitemID`)
+    REFERENCES `LittleLemon`.`Menuitems` (`MenuitemID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -88,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `LittleLemon`.`Orders` (
   `OrderDate` DATE NOT NULL,
   `MenuID` INT NOT NULL,
   `Quantity` INT NOT NULL,
-  `TotalCost` VARCHAR(45) NOT NULL,
+  `TotalPrice` VARCHAR(45) NOT NULL,
   `StaffID` INT NOT NULL,
   `CustomerID` INT NOT NULL,
   PRIMARY KEY (`OrderID`),
