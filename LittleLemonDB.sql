@@ -30,9 +30,8 @@ ENGINE = InnoDB;
 -- Table `LittleLemon`.`Staff`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `LittleLemon`.`Staff` (
-  `StaffID` INT NOT NULL,
-  `FirstName` VARCHAR(100) NOT NULL,
-  `LastName` VARCHAR(100) NOT NULL,
+  `StaffID` INT NOT NULL AUTO_INCREMENT,
+  `FullName` VARCHAR(100) NOT NULL,
   `PhoneNr` INT NOT NULL,
   `Role` VARCHAR(100) NOT NULL,
   `Salary` INT NOT NULL,
@@ -105,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `LittleLemon`.`Orders` (
   `OrderDate` DATE NOT NULL,
   `MenuID` INT NOT NULL,
   `Quantity` INT NOT NULL,
-  `TotalPrice` VARCHAR(45) NOT NULL,
+  `TotalPrice` DECIMAL(10,2) NOT NULL,
   `StaffID` INT NOT NULL,
   `CustomerID` INT NOT NULL,
   PRIMARY KEY (`OrderID`),
