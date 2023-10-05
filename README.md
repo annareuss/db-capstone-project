@@ -1,11 +1,12 @@
 # db-capstone-project
-Setting up the repository for the Capstone project  
+Little Lemon restaurant Capstone project  
 
-Document: worknotes.docx  
-MySQL Workbench: LittleLemonDM.mwb  
-SQL code: sql_code.sql  
-Tableau: Tableau_LittleLemon.twb  
-Python: configuring_mysql_connector.ipynb  
+## Content:
+MySQL Workbench ER diagram: LittleLemonDM.mwb. then run forward engineer 
+SQL code including the inserts and procedures:  sql_code.sql 
+Tableau data analysis: Tableau_LittleLemon.twb  
+Python connect to the database: configuring_mysql_connector.ipynb  
+
 
 
 
