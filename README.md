@@ -1,5 +1,5 @@
-# db-capstone-project
-Little Lemon restaurant Capstone project  
+db-capstone-project
+# Little Lemon restaurant Capstone project  
 
 ## Content:  
 **MySQL Workbench ER diagram:** `LittleLemonDM.mwb`. Run `LittleLemonDB.sql` or forward engineer   
