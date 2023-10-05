@@ -6,6 +6,7 @@ db-capstone-project
 **SQL code to insert data:**  `insert.sql`   
 **SQL code procedures:**  `procedures.sql`   
 **Tableau data analysis:** `Tableau_LittleLemon.twb`    
+**Excel file for Tableau analysis:** `LittleLemon_data.xlsx`  
 **Python connect to the database:** `configuring_mysql_connector.ipynb`    
 
 
